@@ -18,9 +18,9 @@ def parse_arguments():
 
 def write_file(dropbox_data, file_path):
     with open(file_path, "wb") as f:
-        f.write(dropbox_data.content)
-        #for chunk in dropbox_data.iter_content(chunk_size=4096):
-        #    f.write(chunk)
+        # f.write(dropbox_data.content)
+        for chunk in dropbox_data.iter_content(chunk_size=4096):
+            f.write(chunk)
 
 def download_file(dbx, dropbox_path, local_path):
     """
